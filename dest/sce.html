@@ -64,40 +64,25 @@
 <!-- pbanner -->
 <div class="container">
     <div class="nw1 pw2">
-        <div id="sc_img">
-            <ul class="ab-img-list ab-img-list2 clearfix">
-                <li class="item1">
-                    <!-- data-original大图 -->
-                    <div class="pic scapic"><img data-original="img/sc_img2.jpg" src="img/sc_img2.jpg" alt=""></div>
-                    <div class="pic scapic"><img data-original="img/sc_img3.jpg" src="img/sc_img3.jpg" alt=""></div>
-                </li>
-                <li class="item2">
-                    <div class="pic scapic"><img data-original="img/sc_img1.jpg" src="img/sc_img1.jpg" alt=""></div>
-                </li>
-                <li class="item1">
-                    <div class="pic scapic"><img data-original="img/sc_img4.jpg" src="img/sc_img4.jpg" alt=""></div>
-                    <div class="pic scapic"><img data-original="img/sc_img5.jpg" src="img/sc_img5.jpg" alt=""></div>
-                </li>
-                <li class="item3">
-                    <div class="pic scapic"><img data-original="img/sc_img6.jpg" src="img/sc_img6.jpg" alt=""></div>
-                </li>
-            </ul>
-            <ul class="ab-img-list ab-img-list2 clearfix">
-                <li class="item1">
-                    <div class="pic scapic"><img data-original="img/sc_img2.jpg" src="img/sc_img2.jpg" alt=""></div>
-                    <div class="pic scapic"><img data-original="img/sc_img3.jpg" src="img/sc_img3.jpg" alt=""></div>
-                </li>
-                <li class="item2">
-                    <div class="pic scapic"><img data-original="img/sc_img1.jpg" src="img/sc_img1.jpg" alt=""></div>
-                </li>
-                <li class="item1">
-                    <div class="pic scapic"><img data-original="img/sc_img4.jpg" src="img/sc_img4.jpg" alt=""></div>
-                    <div class="pic scapic"><img data-original="img/sc_img5.jpg" src="img/sc_img5.jpg" alt=""></div>
-                </li>
-                <li class="item3">
-                    <div class="pic scapic"><img data-original="img/sc_img6.jpg" src="img/sc_img6.jpg" alt=""></div>
-                </li>
-            </ul>
+        <div class="sce-img-list clearfix" id="sc_img">
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img2.jpg" src="img/sc_img2.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img3.jpg" src="img/sc_img3.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img1.jpg" src="img/sc_img1.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img4.jpg" src="img/sc_img4.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img5.jpg" src="img/sc_img5.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img2.jpg" src="img/sc_img2.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img3.jpg" src="img/sc_img3.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img1.jpg" src="img/sc_img1.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img4.jpg" src="img/sc_img4.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img5.jpg" src="img/sc_img5.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img2.jpg" src="img/sc_img2.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img3.jpg" src="img/sc_img3.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img1.jpg" src="img/sc_img1.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img4.jpg" src="img/sc_img4.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img5.jpg" src="img/sc_img5.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img4.jpg" src="img/sc_img4.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img5.jpg" src="img/sc_img5.jpg" alt=""></div></div>
+            <div class="item"><div class="pic scapic"><img data-original="img/sc_img4.jpg" src="img/sc_img4.jpg" alt=""></div></div>
         </div>
     </div>
     <!-- nw1 -->
@@ -164,9 +149,18 @@
 </ul>
 <script src="js/plugin.js"></script>
 <script src="js/viewer.min.js"></script>
+<script src="js/masonry.pkgd.js"></script>
 <script src="js/page.js"></script>
 <script>
 $(function() {
+    var $container = $('.sce-img-list'); 
+    $container.imagesLoaded( function(){  
+        $container.masonry({
+            itemSelector: '.item',
+            percentPosition: true,//响应式
+            isAnimated : true  
+        });
+    });
     $('#sc_img').viewer({
         url: 'data-original',
         title: false,
